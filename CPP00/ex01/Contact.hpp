@@ -6,7 +6,7 @@
 /*   By: krijn <krijn@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/09 18:23:06 by krijn         #+#    #+#                 */
-/*   Updated: 2024/02/09 18:40:52 by krijn         ########   odam.nl         */
+/*   Updated: 2024/02/10 23:00:15 by krijn         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ class Contact {
 		void setNickName(std::string nickName);
 		void setPhoneNumber(std::string phoneNumber);
 		void setDarkestSecret(std::string darkestSecret);
+
+		//Display functions
+		std::string smallDisplayString();
+		std::string fullDisplayString();
 };
 
 #endif
