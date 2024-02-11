@@ -6,7 +6,7 @@
 /*   By: krijn <krijn@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/09 19:24:02 by krijn         #+#    #+#                 */
-/*   Updated: 2024/02/10 23:05:28 by krijn         ########   odam.nl         */
+/*   Updated: 2024/02/11 15:11:00 by krijn         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-void print_banner() {
+void printBanner() {
   std::cout << R"(*****************************************
 **             Phone Book              **
 *****************************************
@@ -26,7 +26,7 @@ std::string receiveInput(std::string msg)
 {
 	std::string input = "";
 
-	while (input.length() < 2) {
+	while (input.length() < 1) {
 		std::cout << msg;
         std::getline(std::cin, input);
     }
@@ -52,7 +52,7 @@ void search(PhoneBook &phoneBook)
 {
 	std::string input = "";
 
-	print_banner();
+	printBanner();
 	if (phoneBook.getNumContacts() < 1) {
 		std::cout << "No contacts available!" << std::endl;
 		return ;
@@ -65,7 +65,7 @@ void search(PhoneBook &phoneBook)
 		if (input.length() == 1 && isdigit(input[0]) && std::stoi(input) < phoneBook.getNumContacts())
 			break ;
 	}
-	std::cout << phoneBook.getContact(atoi(input.c_str())).fullDisplayString();
+	std::cout << phoneBook.getContact(0).fullDisplayString();
 }
 
 int main(void)
@@ -73,7 +73,7 @@ int main(void)
 	PhoneBook 	phoneBook = PhoneBook();
 	std::string	input;
 
-	print_banner();
+	printBanner();
 	std::cout << "Welcome to the crappy phone book!" << std::endl;
 	while (true) {
 		std::cout << "What would you like to do: ADD, SEARCH, EXIT" << std::endl;
