@@ -6,7 +6,7 @@
 /*   By: krijn <krijn@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/09 19:24:02 by krijn         #+#    #+#                 */
-/*   Updated: 2024/02/11 15:11:00 by krijn         ########   odam.nl         */
+/*   Updated: 2024/02/12 14:49:37 by kschelvi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void search(PhoneBook &phoneBook)
 {
 	std::string input = "";
 
-	printBanner();
 	if (phoneBook.getNumContacts() < 1) {
 		std::cout << "No contacts available!" << std::endl;
 		return ;
@@ -77,7 +76,7 @@ int main(void)
 	std::cout << "Welcome to the crappy phone book!" << std::endl;
 	while (true) {
 		std::cout << "What would you like to do: ADD, SEARCH, EXIT" << std::endl;
-		std::getline(std::cin, input);
+		input = receiveInput(">>> ");
 		if (input.compare("EXIT") == 0 || input.compare("exit") == 0)
 			break ;
 		if (input.compare("ADD") == 0 || input.compare("add") == 0)

@@ -3,19 +3,19 @@
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
-#    By: krijn <krijn@student.codam.nl>               +#+                      #
+#    By: kschelvi <kschelvi@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2024/02/09 19:23:18 by krijn         #+#    #+#                  #
-#    Updated: 2024/02/12 14:47:17 by kschelvi      ########   odam.nl          #
+#    Created: 2024/02/12 15:38:38 by kschelvi      #+#    #+#                  #
+#    Updated: 2024/02/12 16:26:30 by kschelvi      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = account
 
 CXX = c++
-CXXFLAGS = -Werror -Wall -Wextra -std=c++11
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98
 
-SRC = ./main.cpp ./Contact.cpp ./PhoneBook.cpp
+SRC = ./tests.cpp ./Account.cpp
 OBJ = $(SRC:%.cpp=%.o)
 
 all: $(NAME)

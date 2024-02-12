@@ -6,30 +6,30 @@
 /*   By: krijn <krijn@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/09 19:03:46 by krijn         #+#    #+#                 */
-/*   Updated: 2024/02/09 19:22:39 by krijn         ########   odam.nl         */
+/*   Updated: 2024/02/12 12:38:51 by kschelvi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : numContacts(0) {};
+PhoneBook::PhoneBook() : _numContacts(0) {};
 
 void PhoneBook::addContact(Contact contact)
 {
-	if (numContacts < maxSize) {
-		arr[numContacts] = contact;
-		numContacts++;
+	if (_numContacts < _maxSize) {
+		_arr[_numContacts] = contact;
+		_numContacts++;
 		return ;
 	}
-	for (int i = 1; i < numContacts; i++)
-		arr[i - 1] = arr[i];
-	arr[numContacts - 1] = contact;
+	for (int i = 1; i < _numContacts; i++)
+		_arr[i - 1] = _arr[i];
+	_arr[_numContacts - 1] = contact;
 }
 
 int PhoneBook::getNumContacts() {
-	return (numContacts);
+	return (_numContacts);
 }
 
 Contact PhoneBook::getContact(int index) {
-	return (arr[index]);
+	return (_arr[index]);
 }
