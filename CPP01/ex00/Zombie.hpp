@@ -6,12 +6,12 @@
 /*   By: kschelvi <kschelvi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/12 16:40:24 by kschelvi      #+#    #+#                 */
-/*   Updated: 2024/02/12 17:04:21 by kschelvi      ########   odam.nl         */
+/*   Updated: 2024/02/12 17:09:28 by kschelvi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ZOMBIE__
-# define __ZOMBIE__
+#ifndef __ZOMBIE_H__
+# define __ZOMBIE_H__
 
 # include <string>
 
