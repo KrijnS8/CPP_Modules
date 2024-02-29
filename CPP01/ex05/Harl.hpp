@@ -6,7 +6,7 @@
 /*   By: kschelvi <kschelvi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/16 12:27:28 by kschelvi      #+#    #+#                 */
-/*   Updated: 2024/02/16 15:46:45 by kschelvi      ########   odam.nl         */
+/*   Updated: 2024/02/29 14:04:03 by kschelvi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@
 class Harl
 {
 	private:
-		static void _debug(void);
-		static void _info(void);
-		static void _warning(void);
-		static void _error(void);
-		Harl(void);
+		void _debug(void);
+		void _info(void);
+		void _warning(void);
+		void _error(void);
 	public:
-		static void complain(std::string level);
+		void complain(std::string level);
+		Harl(void);
 };
+
+typedef void (Harl::*t_func) ( void );
 
 #endif

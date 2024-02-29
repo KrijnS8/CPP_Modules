@@ -6,12 +6,15 @@
 /*   By: kschelvi <kschelvi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/02/16 14:51:35 by kschelvi      #+#    #+#                 */
-/*   Updated: 2024/02/16 15:40:33 by kschelvi      ########   odam.nl         */
+/*   Updated: 2024/02/29 14:58:50 by kschelvi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <functional>
 #include "Harl.hpp"
+
+Harl::Harl( void ) {}
 
 void Harl::_debug(void)
 {
@@ -28,7 +31,7 @@ void Harl::_info(void)
 void Harl::_warning(void)
 {
 	std::cout << "I think I deserve to have some extra bacon for free. I've been coming for" << \
-					"years whereas you started working here since last month." << std::endl;
+					" years whereas you started working here since last month." << std::endl;
 }
 
 void Harl::_error(void)
@@ -38,5 +41,10 @@ void Harl::_error(void)
 
 void Harl::complain(std::string level)
 {
-	
+	t_func func[] = { &Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error };
+	std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+
+	for (int i = 0; i < 4; i++)
+		if (!level.compare(levels[i]))
+			(this->*func[i])();
 }
