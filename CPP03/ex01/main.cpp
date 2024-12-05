@@ -6,7 +6,7 @@
 /*   By: krijn <krijn@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/09/11 13:07:23 by krijn         #+#    #+#                 */
-/*   Updated: 2024/09/13 00:02:50 by krijn         ########   odam.nl         */
+/*   Updated: 2024/12/04 12:19:48 by krijn         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ int main(void)
 	cp.takeDamage(7);
 	st.attack("je moeder");
 	st2.attack("je moeder");
+	st2.guardGate();
 }

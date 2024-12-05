@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.h                                         :+:    :+:            */
+/*   FragTrap.h                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: krijn <krijn@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/09/12 15:25:14 by krijn         #+#    #+#                 */
-/*   Updated: 2024/12/04 12:18:45 by krijn         ########   odam.nl         */
+/*   Created: 2024/12/04 11:47:07 by krijn         #+#    #+#                 */
+/*   Updated: 2024/12/04 11:55:28 by krijn         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
+#ifndef FRAGTRAP_H
+#define FRAGTRAP_H
 
-#include "ClapTrap.h"
+#ifndef CLAPTRAP_H
+# include "ClapTrap.h"
+#endif
 
-class ScavTrap: public ClapTrap
+#include <string>
+
+class FragTrap: public ClapTrap
 {
-	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap &st);
-		ScavTrap &operator=(const ScavTrap &st);
-		void	guardGate();
-		//void attack(const std::string &target) override;
+    public:
+        FragTrap();
+        FragTrap(std::string name);
+        FragTrap(FragTrap &ft);
+        FragTrap &operator=(const FragTrap &ft);
+        void    highFivesGuys(void);
 };
 
 #endif

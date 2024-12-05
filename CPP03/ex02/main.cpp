@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.h                                         :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: krijn <krijn@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/09/12 15:25:14 by krijn         #+#    #+#                 */
-/*   Updated: 2024/12/04 12:18:45 by krijn         ########   odam.nl         */
+/*   Created: 2024/09/11 13:07:23 by krijn         #+#    #+#                 */
+/*   Updated: 2024/12/04 12:22:17 by krijn         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
-
+#include <iostream>
 #include "ClapTrap.h"
-
-class ScavTrap: public ClapTrap
+#include "ScavTrap.h"
+int main(void)
 {
-	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap &st);
-		ScavTrap &operator=(const ScavTrap &st);
-		void	guardGate();
-		//void attack(const std::string &target) override;
-};
+	ClapTrap cp("test");
+	ScavTrap st("test2");
+	ScavTrap st2(st);
 
-#endif
+	cp.attack("je moeder");
+	cp.takeDamage(8);
+	cp.beRepaired(5);
+	cp.takeDamage(10);
+	cp.takeDamage(7);
+	st.attack("je moeder");
+	st2.attack("je moeder");
+	st2.guardGate();
+}
